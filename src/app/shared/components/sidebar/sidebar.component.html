@@ -1,7 +1,7 @@
 <div class="bg-dark border-right pr" id="sidebar">
-  <h3 class="text-light">GifsApp</h3>
+  <h3 class="ps-4 pt-3 text-light">GifsApp</h3>
   <hr class="text-white">
-  <div *ngFor="let tag of tags;" class="list-group list-reset">
+  <div *ngFor="let tag of tags;" class="list-group list-reset py-2 px-4">
     <button (click)="searchTag(tag)" class="list-group-item list-group-item-action">{{tag | titlecase}}</button>
   </div>
 </div>
