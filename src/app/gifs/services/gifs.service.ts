@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
+
 import {Gif, SearchResponse} from "../interfaces/gifs.interface";
+
 
 const GIPHY_API_KEY: string = '2ouhiWyIQ3JF2hFv64saIpHjNgTXbVVm';
 const GIPHY_API_URL: string = 'https://api.giphy.com/v1/gifs';
-const GIPHY_API_LIMIT: string = '10';
+const GIPHY_API_LIMIT: string = '12';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +45,7 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
 
-    this._tagsHistory = this._tagsHistory.slice(0, 10);
+    this._tagsHistory = this._tagsHistory.slice(0, parseInt(GIPHY_API_LIMIT));
 
     this.saveLocalStorage()
   }
