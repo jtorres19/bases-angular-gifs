@@ -6,7 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve --port 4500 -o",
     "build": "ng build",
-    "build:github": "ng build --base-href ./ && del ./docs && copyfiles ./dist/bases/* ./docs -f",
+    "build:github": "ng build --base-href ./ && mkdirp -p ./docs && del ./docs && copyfiles ./dist/gifs-app/* ./docs -f",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -29,12 +29,15 @@
     "@angular/cli": "~16.0.4",
     "@angular/compiler-cli": "^16.0.0",
     "@types/jasmine": "~4.3.0",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^5.0.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "mkdirp": "^3.0.1",
     "typescript": "~5.0.2"
   }
 }
